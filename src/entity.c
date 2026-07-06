@@ -12,7 +12,7 @@ Entity *createPlayer() {
     }
     
     p->size = (Vector2){ 50, 50 };
-    p->position = (Vector2){ 5, 5 };
+    p->position = (Vector2){ 25, 5 };
     p->velocity = (Vector2){ 0, 0 };
     p->acceleration = (Vector2){ 0, 0 };
 
@@ -31,9 +31,11 @@ void applyForce(Entity *e, float ax, float ay, float deltatime) {
 }
 
 void updateVelocity(Entity *e, float deltatime) {
-    e->velocity.x += e->acceleration.x * deltatime;
-    e->velocity.y += e->acceleration.y * deltatime;
+    e->velocity.x += e->acceleration.x * deltatime * 0.5f;
+    e->velocity.y += e->acceleration.y * deltatime * 0.5f;
     updatePosition(e, deltatime);
+    e->velocity.x += e->acceleration.x * deltatime * 0.5f;
+    e->velocity.y += e->acceleration.y * deltatime * 0.5f;
 }
 
 

@@ -14,6 +14,13 @@ int main() {
     float deltatime;
     while (!WindowShouldClose()) {
 	deltatime = GetFrameTime();
+
+	if (IsKeyDown(KEY_SPACE)) {
+	    applyForce(player, 0.0, -500, deltatime);
+	} else if (IsKeyReleased(KEY_SPACE)){
+	    applyForce(player, 0.0, +500, deltatime);
+	}
+
 	updateVelocity(player, deltatime);
 	BeginDrawing();
 	    ClearBackground(WHITE);
