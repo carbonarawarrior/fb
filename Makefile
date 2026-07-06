@@ -13,7 +13,8 @@ else
 	BUILD := build/debug
 endif
 
-LDLIBS := 
+LDFLAGS := -Llib
+LDLIBS := lib/libraylib.a -lm -lX11
 
 TARGET := ${BUILD}/gd
 
