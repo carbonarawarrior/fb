@@ -16,7 +16,7 @@ endif
 LDFLAGS := -Llib
 LDLIBS := lib/libraylib.a -lm -lX11
 
-TARGET := ${BUILD}/gd
+TARGET := ${BUILD}/fb
 
 SRC := ${wildcard src/*.c}
 OBJS := ${patsubst src/%.c,${BUILD}/%.o,${SRC}}
