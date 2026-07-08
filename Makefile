@@ -1,4 +1,4 @@
-CC := gcc
+CC ?= /usr/bin/gcc
 
 CFLAGS := -Wall -Wextra -Iinclude
 DEBUGFLAGS := -g -O0
