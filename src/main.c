@@ -16,6 +16,7 @@ int main() {
     Entity *player = createPlayer();
     size_t obj_count = 10;
     Entity *objects[obj_count];
+    float deltatime;
 
     if (createObjects(objects, obj_count)) {
 	printf("Error: couldn't create objects\n");
@@ -23,7 +24,6 @@ int main() {
     }
 
 gamestart:
-    float deltatime;
     while (!WindowShouldClose()) {
 	while (loseCheck(player, objects, obj_count) && !WindowShouldClose()){
 	    deltatime = GetFrameTime();
@@ -60,7 +60,7 @@ gamestart:
     }
     free(player);
     for (size_t i = 0; i < obj_count; ++i) {
-	free(objects[i]);
+        free(objects[i]);
     }
     CloseWindow();
     return 0;
